@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-bg-dark text-white font-sans overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-orbitron;
+  }
+
+  button, a {
+    @apply transition-all duration-300;
+  }
+}
+
+@layer components {
+  .container-app {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+  }
+  
+  .neon-border {
+    @apply border border-neon-blue/50 shadow-neon-blue;
+  }
+
+  .neon-glow {
+    @apply shadow-neon-blue;
+  }
+
+  .neon-text {
+    @apply text-neon-blue font-orbitron;
+  }
+
+  .neon-button {
+    @apply bg-transparent border border-neon-blue text-neon-blue 
+           hover:bg-neon-blue/10 hover:shadow-neon-blue
+           px-6 py-2 rounded font-orbitron transition-all duration-300;
+  }
+
+  .neon-button-filled {
+    @apply bg-neon-blue/20 border border-neon-blue text-neon-blue 
+           hover:bg-neon-blue/30 hover:shadow-neon-blue
+           px-6 py-2 rounded font-orbitron transition-all duration-300;
+  }
+
+  .card {
+    @apply bg-bg-card backdrop-blur-md rounded-lg border border-grid-blue/50 p-6;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .grid-bg {
+    @apply bg-grid-pattern bg-darker-blue;
+  }
+  
+  .glassmorphism {
+    @apply bg-dark-blue/40 backdrop-blur-md border border-grid-blue/30;
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.scanline {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to bottom, 
+    transparent 0%, 
+    rgba(0, 169, 255, 0.2) 50%, 
+    transparent 100%);
+  animation: scanline 8s linear infinite;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #00A9FF, #00FFF5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
